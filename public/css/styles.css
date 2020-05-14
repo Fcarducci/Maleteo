@@ -1,0 +1,698 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  background-color: #d2c6b2;
+}
+
+.cabecera {
+  /* background-color: #ececec !important; */
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cabecera-img {
+  padding-left: 10vw;
+}
+.bienvenido {
+  margin: 5% 0 5% 10%;
+  color: white;
+}
+.list-container {
+  margin-right: 20%;
+}
+.list-container ul li {
+  margin-right: 20%;
+}
+
+.cabecera-enlace {
+  color: #30475e !important;
+  font-weight: bold;
+}
+
+.cabecera-enlace:hover {
+  text-decoration: underline;
+}
+.jumbotron {
+  background-image: url("/assets/img/jumbo@2x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 70vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.store {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 45px;
+  width: 40%;
+  height: 70vh;
+  margin-left: 18%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.store-mensaje {
+  width: 100%;
+  padding: 7%;
+}
+
+.store-logos {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/*!!/ segunda seccion de pagina*/
+
+.como-funciona {
+  margin-top: 4%;
+}
+
+.pasos-titulo,
+.opiniones-titulo {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 3%;
+}
+
+.pasos,
+.opiniones {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+}
+
+.paso,
+.opinion {
+  width: 25%;
+}
+.paso-titulo {
+  font-size: 25px;
+}
+.paso-circulo {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffce32), to(#f9a519));
+  background: linear-gradient(180deg, #ffce32 0%, #f9a519 100%);
+  font-size: 35px;
+  color: white;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 100%;
+}
+
+.paso-circulo,
+.paso-titulo {
+  margin: 15px auto;
+}
+
+.paso-texto {
+  margin: 30px auto;
+  width: 80%;
+}
+
+/*!!/ tercera seccion de pagina*/
+
+.contacto {
+  margin: 4%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contacto-foto {
+  padding: 25px;
+  width: 25%;
+  height: auto;
+}
+
+.contacto-foto img {
+  width: 100%;
+  height: auto;
+}
+
+.form {
+  border: solid 1px lightgray;
+  display: flex;
+  flex-direction: column;
+  width: 120%;
+  padding: 25px;
+}
+
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+.containerFormSuccess {
+  display: flex;
+  flex-direction: column;
+}
+.isa_info,
+.isa_success,
+.isa_warning,
+.isa_error {
+  display: none;
+  width: 120%;
+  margin: 10px 0px;
+  padding: 12px;
+}
+.isa_info {
+  color: #00529b;
+  background-color: #bde5f8;
+}
+.isa_success {
+  color: #4f8a10;
+  background-color: #dff2bf;
+}
+.isa_warning {
+  color: #9f6000;
+  background-color: #feefb3;
+}
+.isa_error {
+  color: #d8000c;
+  background-color: #ffd2d2;
+}
+.isa_info i,
+.isa_success i,
+.isa_warning i,
+.isa_error i {
+  margin: 10px 22px;
+  font-size: 2em;
+  vertical-align: middle;
+}
+.campo-formulario {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.campo-formulario input,
+.campo-formulario select {
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.check {
+  display: flex;
+}
+
+.check input {
+  width: auto;
+  margin-right: 2%;
+}
+
+.enlace {
+  text-decoration: underline;
+  color: #f9a519;
+}
+
+.submit {
+  font-size: 20px;
+  width: 25%;
+  height: auto;
+  padding: 2%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffce32), to(#f9a519));
+  background: linear-gradient(180deg, #ffce32 0%, #f9a519 100%);
+}
+
+/*!!/ cuarta seccion de pagina*/
+
+.opinion-texto {
+  padding: 20px;
+  border: solid 1px lightgray;
+  text-align: left;
+}
+
+.opinion-autor {
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+}
+
+.opinion-lugar {
+  padding: 5px 5px 5px 15px;
+  width: 100%;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 10%;
+}
+
+/*!!/ quinta seccion de pagina*/
+
+footer {
+  height: 20vh;
+  background-color: #343a40;
+  color: white;
+  font-size: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heart {
+  color: red;
+  font-size: 30px;
+}
+
+/* ** MEDIA QUERYs*/
+
+@media screen and (max-width: 1024px) {
+  .header {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .logo-header {
+    width: 55%;
+    height: auto;
+    padding: 5vh;
+  }
+
+  .logo-header img {
+    width: 100%;
+  }
+
+  .jumbotron {
+    background-image: url("/assets/img/jumbo@1x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .store {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 60px;
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+  }
+
+  .store-logos {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .imgContainer {
+    width: 30%;
+  }
+  .imgContainer img {
+    width: 100%;
+  }
+
+  /*!!/ segunda seccion de pagina*/
+
+  .pasos,
+  .opiniones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+  }
+
+  .paso,
+  .opinion {
+    width: 80%;
+  }
+
+  .pasos-titulo {
+    font-size: 60px;
+  }
+
+  .paso-titulo {
+    font-size: 55px;
+  }
+
+  .paso-circulo {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffce32), to(#f9a519));
+    background: linear-gradient(180deg, #ffce32 0%, #f9a519 100%);
+    font-size: 55px;
+    color: white;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+  .paso-texto,
+  .opinion-texto {
+    font-size: 35px;
+  }
+  /*!!/ tercera seccion de pagina*/
+  .contacto {
+    margin: 4%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .contacto-foto {
+    padding: 25px;
+    width: 65%;
+  }
+
+  .contacto-foto img {
+    width: 100%;
+    height: auto;
+  }
+  .isa_info,
+  .isa_success,
+  .isa_warning,
+  .isa_error {
+    display: none;
+    width: 100%;
+    margin: 10px 0px;
+    padding: 12px;
+  }
+  .isa_info {
+    color: #00529b;
+    background-color: #bde5f8;
+  }
+  .isa_success {
+    color: #4f8a10;
+    font-size: 30px;
+    background-color: #dff2bf;
+  }
+
+  .form {
+    border: solid 1px lightgray;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 25px;
+  }
+
+  .campo-formulario {
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .campo-formulario input,
+  .campo-formulario select {
+    width: 100%;
+    font-size: 30px;
+    padding: 25px;
+    margin: 5px 0;
+  }
+
+  .campo-formulario select option {
+    font-size: 15px;
+  }
+  .check {
+    display: flex;
+    align-items: center;
+  }
+  .check input {
+    width: auto;
+    margin-right: 2%;
+    align-items: center;
+  }
+
+  .submit {
+    font-size: 30px;
+    width: 25%;
+    height: auto;
+    padding: 2%;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffce32), to(#f9a519));
+    background: linear-gradient(180deg, #ffce32 0%, #f9a519 100%);
+  }
+
+  /*!!/ cuarta seccion de pagina*/
+
+  .opiniones-guardianes {
+    margin-top: 100px;
+  }
+
+  .opiniones-titulo {
+    font-size: 60px;
+  }
+
+  .opinion-autor {
+    font-size: 30px;
+  }
+
+  .opinion-lugar {
+    font-size: 40px;
+  }
+
+  /*!!/ footer*/
+
+  footer {
+    font-size: 40px;
+  }
+
+  footer picture {
+    width: 30%;
+  }
+
+  footer picture img {
+    width: 100%;
+  }
+
+  .heart {
+    color: red;
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .header {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .logo-header {
+    width: 70%;
+    height: auto;
+    padding: 5vh;
+  }
+
+  .logo-header img {
+    width: 100%;
+  }
+
+  .jumbotron {
+    background-image: url("/assets/img/jumbo@1x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .store {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 40px;
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+  }
+
+  .store-logos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .imgContainer {
+    width: 50%;
+    margin: 10px 0;
+  }
+  .imgContainer img {
+    width: 100%;
+  }
+
+  /*!!/ segunda seccion de pagina*/
+
+  .pasos-titulo,
+  .opiniones-titulo {
+    font-size: 35px;
+  }
+
+  .pasos,
+  .opiniones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+  }
+
+  .paso-titulo {
+    font-size: 30px;
+  }
+
+  .paso-circulo {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffce32), to(#f9a519));
+    background: linear-gradient(180deg, #ffce32 0%, #f9a519 100%);
+    font-size: 35px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+  .paso,
+  .opinion {
+    width: 80%;
+  }
+
+  .paso-texto {
+    font-size: 20px;
+  }
+  /*!!/ tercera seccion de pagina*/
+  .contacto {
+    margin: 4%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .contacto-foto {
+    padding: 25px;
+    width: 100%;
+    height: auto;
+  }
+
+  .contacto-foto img {
+    width: 100%;
+    height: auto;
+  }
+
+  .form {
+    border: solid 1px lightgray;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 25px;
+  }
+
+  .campo-formulario {
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .titulo-form {
+    font-size: 30px;
+  }
+
+  .campo-formulario input,
+  .campo-formulario select {
+    font-size: 15px;
+    padding: 5px;
+    margin: 5px 0;
+  }
+
+  .campo-formulario select {
+    width: 100%;
+  }
+
+  .campo-formulario select option {
+    font-size: 15px;
+  }
+
+  .check {
+    display: flex;
+    align-items: center;
+  }
+  .check input {
+    width: auto;
+    margin-right: 5%;
+    align-items: center;
+  }
+
+  .submit {
+    font-size: 20px;
+    width: 45%;
+    height: auto;
+    padding: 2%;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffce32), to(#f9a519));
+    background: linear-gradient(180deg, #ffce32 0%, #f9a519 100%);
+  }
+
+  /*!!/ cuarta seccion de pagina*/
+
+  .opiniones-guardianes {
+    margin-top: 30px;
+  }
+
+  .opinion-texto {
+    font-size: 20px;
+  }
+
+  .opinion-autor {
+    font-size: 20px;
+  }
+
+  .opinion-lugar {
+    font-size: 25px;
+  }
+  /*!!/ Footer*/
+  footer {
+    font-size: 20px;
+  }
+
+  footer picture {
+    width: 35%;
+  }
+
+  footer picture img {
+    width: 100%;
+  }
+
+  .heart {
+    color: red;
+    font-size: 15px;
+  }
+}

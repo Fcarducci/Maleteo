@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+  {% block content %}
+    <section class="jumbotron">
+      <article class="store">
+        <p class="store-mensaje">Gana dinero guardando equipaje a viajeros como tu</p>
+        <div class="store-logos">
+          <picture class="imgContainer">
+            <img src="assets/img/app-store.svg" alt="App Store" />
+          </picture>
+          <picture class="imgContainer">
+            <img src="assets/img/google-play.svg" alt="Google Play" />
+          </picture>
+        </div>
+      </article>
+    </section>
+
+    <section class="como-funciona">
+      <div class="pasos-titulo">
+        <p>¿Como funciona?</p>
+      </div>
+      <article class="pasos">
+        <div class="paso">
+          <div class="paso-circulo">1</div>
+          <div class="paso-titulo">Date de alta</div>
+          <div class="paso-texto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laboriosam ratione eligendi fugiat itaque
+              commodi eveniet, atque tenetur amet facere nobis unde ut totam voluptas iusto possimus incidunt eius
+              aperiam!
+          </div>
+        </div>
+
+        <div class="paso">
+          <div class="paso-circulo">2</div>
+          <div class="paso-titulo">Date de alta</div>
+          <div class="paso-texto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laboriosam ratione eligendi fugiat itaque
+              commodi eveniet, atque tenetur amet facere nobis unde ut totam voluptas iusto possimus incidunt eius
+              aperiam!
+          </div>
+        </div>
+          <div class="paso">
+            <div class="paso-circulo">3</div>
+            <div class="paso-titulo">Date de alta</div>
+            <div class="paso-texto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laboriosam ratione eligendi fugiat itaque
+              commodi eveniet, atque tenetur amet facere nobis unde ut totam voluptas iusto possimus incidunt eius
+              aperiam!
+            </div>
+          </div>
+      </article>
+    </section>
+
+    <section class="contacto">
+      <picture class="contacto-foto">
+        <img src="assets/img/iPhoneX.png" alt="Phone" />
+      </picture>
+      <div class="containerFormSuccess">
+        <div class="isa_success">
+          <i class="fa fa-check"></i>
+          <span id="respuesta"></span>
+        </div>  
+        {{form_start(demoForm, {'action': path("demo_new"),'attr': { 'class':'form', 'id':'formulario'}})}}
+          <div class="campo-formulario">
+            <p class="titulo-form"><strong>Solicita una demo</strong></p>
+          </div>
+          {# <p id="respuesta"></p> #}
+          {# <div id="Contenido"> #}
+          <div class="campo-formulario">
+            {{form_label(demoForm.nombre)}} 
+            {{form_widget(demoForm.nombre)}}
+            {{form_label(demoForm.email)}} 
+            {{form_widget(demoForm.email)}}
+            {{form_label(demoForm.ciudad)}} 
+            {{form_widget(demoForm.ciudad)}}
+          </div>
+          <div>
+            {{form_widget(demoForm.politica)}} 
+            {{form_label(demoForm.politica)}} 
+            <a style="text-decoration: underline; color: #f9a519;" href="#">politica de privacidad</a>
+          </div>
+
+
+          
+          <div class="campo-formulario">
+            <button id="boton" class="submit">Enviar</button>
+          </div>
+          {# </div> #}
+         
+        {{form_end(demoForm)}}
+    </div>
+    </section>
+
+      <section class="opiniones-guardianes">
+        <div class="opiniones-titulo">
+          <p>Opiniones de otros guardianes</p>
+        </div>
+        <article class="opiniones">
+         {% for opinion in opiniones %}
+           <div class="opinion">
+             <div class="opinion-texto">
+              {{opinion.comentario}}
+             </div>
+             <div class="opinion-autor">{{opinion.autor}}</div>
+             <div class="opinion-lugar">{{opinion.ciudad}}</div>
+           </div>
+          {% endfor %}
+          
+        </article>
+      </section>
+
+ {% endblock %}
+
+

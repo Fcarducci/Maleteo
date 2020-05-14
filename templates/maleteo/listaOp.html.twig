@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+  {% block stylesheets %}
+
+   {{parent()}}
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+
+   <style>
+   footer {
+    height: 20vh;
+      background-color: #343a40;
+     color: white;
+    font-size: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   }
+   
+   </style>
+        
+  {% endblock %}
+
+
+
+    {% block content %}
+     <table style="margin-bottom: 0;" class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">COMENTARIO</th>
+          <th scope="col">AUTOR</th>
+          <th scope="col">CIUDAD</th>
+          <th></th>
+        </tr>
+      </thead>
+
+     {% for opinion in opiniones %}
+
+
+       <tbody>
+         <tr>
+          <th scope="row">{{opinion.id}}</th>
+          <td>{{opinion.comentario}}</td>
+          <td>{{opinion.autor}}</td>
+          <td>{{opinion.ciudad}}</td>
+          <td><td><a href='{{path("deleteOp", {id:opinion.id})}}' style="color:white;"><i class="fas fa-trash-alt fa-1x"></i></a></td></td>
+         </tr>
+  
+      </tbody>
+
+
+
+     {% endfor %} 
+
+</table>
+     
+     
+     
+
+{% endblock %}
+
+
+
+ 

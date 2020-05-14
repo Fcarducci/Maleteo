@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+  {% block stylesheets %}
+
+   {{parent()}}
+
+
+   <link rel="stylesheet" href={{asset("css/signin.css")}}>
+   <style>
+   footer {
+    height: 20vh;
+     background-color: #343a40;
+  color: white;
+    font-size: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   }
+   
+   </style>
+        
+  {% endblock %}
+
+
+    {% block header %}{% endblock %}
+
+    {% block content %} 
+      {{form_start(formRegistro, {'attr': { 'class':'form-signin'}})}}
+      <img  style="width: 75%; margin: auto" class="mb-4" src={{asset("assets/img/logo.svg")}} alt="logo">
+      <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
+      
+       {{form_widget(formRegistro.nombre, {'attr': { 'class':'form-control'}})}}
+       {{form_widget(formRegistro.apellido, {'attr': { 'class':'form-control'}})}}
+       {{form_widget(formRegistro.email, {'attr': { 'class':'form-control'}})}}
+       {{form_widget(formRegistro.ciudad, {'attr': { 'class':'form-control'}})}}
+       {{form_widget(formRegistro.password, {'attr': { 'class':'form-control'}})}}
+     
+        <div>
+            {{form_widget(formRegistro.politica, {'attr': { 'class':'form-control', 'style': 'width:auto; margin-right:10px; display: inline'}})}}
+            {{form_label(formRegistro.politica)}} 
+            <a style="text-decoration: underline; color: #f9a519;" href="#"> politica de privacidad</a>
+        </div>
+       
+      {# <label for="inputEmail" class="sr-only">Nombre</label>
+      <input type="text" id="inputEmail" class="form-control" placeholder="Nombre" required autofocus>
+      <label for="inputEmail" class="sr-only">Apellido</label>
+      <input type="text" id="inputEmail" class="form-control" placeholder="Apellido" required autofocus>
+      <label for="inputEmail" class="sr-only">Email</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+      <label for="inputPassword" class="sr-only">Contraseña</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+      <label for="inputPassword" class="sr-only">Repetir Contraseña</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Repetir Contraseña" required> #}
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>
+      <p style="text-align: center;" class="mt-5 mb-3 text-muted">&copy; 2020</p>
+    {{form_end(formRegistro)}}
+    
+    {% endblock %}
+
+{% block footer %} {% endblock %}
+
+

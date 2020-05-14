@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+{% block stylesheets %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ asset("css/styles.css") }}">
+
+    {# <style>
+    .cabecera {
+  background-color: #649d66;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+    </style> #}
+       
+{% endblock %}
+    </head>
+    <body>
+
+     <main>
+{% block header %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark cabecera">
+ <a class="navbar-brand cabecera-img" href="{{path("home")}}"><img src="/assets/img/logo.svg" alt="Maleteo" /></a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+ <span class="navbar-toggler-icon"></span>
+ </button>
+ {% if is_granted ('ROLE_USER')%}
+ <p class="bienvenido">Bienvenido a Maleteo {{app.user.nombre}}</p>
+ {% endif %}
+ <div class="collapse navbar-collapse justify-content-md-end list-container " id="navbarNav">
+ 
+ <ul class="navbar-nav">
+ {% if is_granted ('ROLE_ADMIN')%}
+ <li class="nav-item">
+ <a class="nav-link" href='{{path("usuarios")}}'>Solicitudes</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href='{{path("lista de opiniones")}}'>Opiniones</a>
+ </li>
+ {% endif %}
+ {% if is_granted ('ROLE_USER')%}
+ <li class="nav-item">
+ <a class="nav-link" href='{{path("opinar")}}'>Comentar</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href='{{path("app_logout")}}'>Salir</a>
+ </li>
+ {% else %}
+ <li class="nav-item active">
+ <a class="nav-link" href='{{path("app_login")}}'>Entrar</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href='{{path("registro")}}'>Registrarse</a>
+ </li>
+ {% endif %}
+ </ul>
+ </div>
+ </nav>
+
+{# <nav class="navbar navbar-expand-lg cabecera">
+  <a class="navbar-brand cabecera-img" href="{{path("home")}}"><img src="assets/img/logo.svg" alt="Maleteo" /></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+ <span class="navbar-toggler-icon"></span>
+ </button>
+
+  <div class="collapse navbar-collapse list-container" id="navbarNav">
+    <ul class="navbar-nav">
+{% if is_granted('ROLE_ADMIN')%}
+     <li class="nav-item">
+         <a class="nav-link active cabecera-enlace" href='{{path("usuarios")}}'>Solicitudes</a>
+     </li>
+     <li class="nav-item">
+         <a class="nav-link active cabecera-enlace" href='{{path("lista de opiniones")}}'>Opiniones</a>
+     </li>
+ {% endif %}
+ {% if is_granted('ROLE_USER')%}
+ 
+     <li class="nav-item active">
+       <a class="nav-link active cabecera-enlace" href='{{path("opinar")}}'>Comentar</a>
+     </li>
+
+     <li class="nav-item active">
+        <a class="nav-link active cabecera-enlace" href='{{path("app_logout")}}'>Salir</a>
+     </li>
+{% else %}
+      <li class="nav-item active">
+        <a class="nav-link active cabecera-enlace" href='{{path("app_login")}}'>Entrar</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link active cabecera-enlace" href='{{path("registro")}}'>Registrarse</a>
+      </li>
+ {% endif %}
+
+    </ul>
+  </div>
+</nav> #}
+
+
+{% endblock %}
+{% block content %} {% endblock %}
+        
+{% block footer %} 
+      <footer>
+        <picture>
+          <img src="/assets/img/logo.svg" alt="Maleteo" />
+        </picture>
+        <p>Hecho con <span class="heart">❤️</span> en Madrid.</p>
+      </footer>
+{% endblock %}
+      </main>   
+    {% block javascripts %}
+     
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src={{asset("/js/miscript.js")}}></script>
+    
+    {% endblock %}
+        
+    </body>
+</html>

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+  {% block stylesheets %}
+
+   {{parent()}}
+
+
+
+   <style>
+   footer {
+    height: 20vh;
+      background-color: #343a40;
+    color: white;
+    font-size: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   }
+   .formOpCont{
+     background-color: #343a40;
+   }
+   .required{
+     color: white;
+   }
+   
+   </style>
+        
+  {% endblock %}
+
+
+  {% block content %}
+     <div class="formOpCont" style="padding: 50px 150px;">
+  {{form_start(demoFormOp)}}
+
+    <div class="form-group">
+      {{form_label(demoFormOp.autor)}} 
+      {{form_widget(demoFormOp.autor, {'attr': { 'class':'form-control'}})}}
+      {{form_label(demoFormOp.ciudad)}} 
+      {{form_widget(demoFormOp.ciudad, {'attr': { 'class':'form-control'}})}}
+      {{form_label(demoFormOp.comentario)}} 
+      {{form_widget(demoFormOp.comentario, {'attr': { 'class':'form-control'}})}}
+    {# <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"> #}
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Enviar comentario</button>
+
+  {{form_end(demoFormOp)}}
+     </div>
+  {% endblock %}
+
+
+
+
+
