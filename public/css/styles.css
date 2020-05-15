@@ -161,10 +161,14 @@ body {
   display: flex;
   flex-direction: column;
 }
+.isa_error {
+  display: block;
+  font: 15px;
+  flex-direction: row;
+}
 .isa_info,
 .isa_success,
-.isa_warning,
-.isa_error {
+.isa_warning {
   display: none;
   width: 120%;
   margin: 10px 0px;
@@ -185,11 +189,16 @@ body {
 .isa_error {
   color: #d8000c;
   background-color: #ffd2d2;
+  width: 100%;
+}
+.isa_error i {
+  margin: 10px 5px;
+  font-size: 1.5em;
+  vertical-align: middle;
 }
 .isa_info i,
 .isa_success i,
-.isa_warning i,
-.isa_error i {
+.isa_warning i {
   margin: 10px 22px;
   font-size: 2em;
   vertical-align: middle;
@@ -390,8 +399,7 @@ footer {
   }
   .isa_info,
   .isa_success,
-  .isa_warning,
-  .isa_error {
+  .isa_warning {
     display: none;
     width: 100%;
     margin: 10px 0px;

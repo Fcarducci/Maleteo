@@ -30,13 +30,8 @@
        {{form_widget(loginForm.password, {'attr': { 'class':'form-control'}})}}
         <input style='width:auto; margin-right:10px; display: inline' class="form-control" type="checkbox" id="remember_me" name="_remember_me" checked/>
         <label  for="remember_me">Recordarme</label>
-        {# <div>
-            {{form_widget(loginForm.remember, {'attr': { 'class':'form-control', 'name':'_remember_me', 'style': 'width:auto; margin-right:10px; display: inline'}})}}
-            {{form_label(loginForm.remember)}} 
-        </div> #}
-            <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}">
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+      <button class="boton-login btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
       <p style="text-align: center;" class="mt-5 mb-3 text-muted">&copy; 2020</p>
       {{form_end(loginForm)}}
     

@@ -23,7 +23,7 @@ class Formulario extends AbstractType{
   $builder->add('email', EmailType::class, array('attr' => array('placeholder' => 'Francesco@upgrade.com', 'label'=>'Email', 'required' => true)));
   $builder->add('ciudad', ChoiceType::class, ['choices' => ['Madrid' => 'Madrid','Sevilla' => 'Sevilla','Barcelona' => 'Barcelona'],'placeholder' => 'Elige la ciudad', 'label'=>'Ciudad', 'required' => true]);
 
-  $builder->add('politica', CheckboxType::class, ['label' => 'Acepto la','required' => true,]);
+  $builder->add('politica', CheckboxType::class, ['label' => 'Acepto la','required' => true]);
 
  }
 

@@ -55,6 +55,7 @@ public function demo(EntityManagerInterface $em, Request $request)
   $form->handleRequest($request);
   $datos=json_decode($request->getContent(), true);
   // dd($datos);
+  // die;
   
   // if($form->isSubmitted() && $form->isValid()){
 
@@ -142,44 +143,6 @@ public function demo(EntityManagerInterface $em, Request $request)
  return new RedirectResponse('/opiniones/lista');
  }
 
-  // /**
-  //  * @Route("/maleteo/login")
-  //  */
-
-  // public function signin(EntityManagerInterface $em, Request $request)
-  // {
-  //   $form=$this->createForm(LoginForm::class);
-  //   $form->handleRequest($request);
-
-  //   $repo=$em->getRepository(UsuariosRegistrados::class);
-    
-    
-  //   if($form->isSubmitted() && $form->isValid()){
-  //     $usuarioLogin=$form->getData();
-      
-  //     $userRegister=$repo->findOneBy(['email'=>$usuarioLogin['email'], 'password'=>$usuarioLogin['password']]);
-  //     if($userRegister!=null){
-  //       return $this->redirectToRoute("home");
-  //     }else{
-  //       return $this->redirectToRoute("registro");
-  //     }
-
-
-  //   }
-
-
-
- 
-    
-  //   // if($userRegister==null){
-  //   //   return $this->redirectToRoute("registro");
-  //   // }
-      
-  //     return $this->render("maleteo/signin.html.twig", ["loginForm"=>$form->createView()]);
-   
-  
-
-  // } 
 
   /**
    * @Route("registro/error", name="error")
@@ -208,10 +171,10 @@ public function demo(EntityManagerInterface $em, Request $request)
         $em->persist($usuarioRegistrado);
         $em->flush();
         return $this->redirectToRoute("home");
-      }catch(\Throwable $th){
+      }catch(\Exception $th){
 
-        return $this->redirectToRoute("error");
-
+        $this->addFlash('error', 'Email existente, intenta con otro');
+        return $this->redirectToRoute("registro");
       }
 
     }

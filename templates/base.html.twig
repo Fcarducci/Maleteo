@@ -9,15 +9,6 @@
 
     <link rel="stylesheet" href="{{ asset("css/styles.css") }}">
 
-    {# <style>
-    .cabecera {
-  background-color: #649d66;
-  height: 20vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-    </style> #}
        
 {% endblock %}
     </head>
@@ -64,43 +55,6 @@
  </div>
  </nav>
 
-{# <nav class="navbar navbar-expand-lg cabecera">
-  <a class="navbar-brand cabecera-img" href="{{path("home")}}"><img src="assets/img/logo.svg" alt="Maleteo" /></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
- <span class="navbar-toggler-icon"></span>
- </button>
-
-  <div class="collapse navbar-collapse list-container" id="navbarNav">
-    <ul class="navbar-nav">
-{% if is_granted('ROLE_ADMIN')%}
-     <li class="nav-item">
-         <a class="nav-link active cabecera-enlace" href='{{path("usuarios")}}'>Solicitudes</a>
-     </li>
-     <li class="nav-item">
-         <a class="nav-link active cabecera-enlace" href='{{path("lista de opiniones")}}'>Opiniones</a>
-     </li>
- {% endif %}
- {% if is_granted('ROLE_USER')%}
- 
-     <li class="nav-item active">
-       <a class="nav-link active cabecera-enlace" href='{{path("opinar")}}'>Comentar</a>
-     </li>
-
-     <li class="nav-item active">
-        <a class="nav-link active cabecera-enlace" href='{{path("app_logout")}}'>Salir</a>
-     </li>
-{% else %}
-      <li class="nav-item active">
-        <a class="nav-link active cabecera-enlace" href='{{path("app_login")}}'>Entrar</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link active cabecera-enlace" href='{{path("registro")}}'>Registrarse</a>
-      </li>
- {% endif %}
-
-    </ul>
-  </div>
-</nav> #}
 
 
 {% endblock %}

@@ -8,15 +8,19 @@
    <link rel="stylesheet" href={{asset("css/signin.css")}}>
    <style>
    footer {
-    height: 20vh;
+     height: 20vh;
      background-color: #343a40;
-  color: white;
-    font-size: 25px;
+     color: white;
+     font-size: 25px;
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+   }
+
+   .titleError{
+     font-size: 1rem;
    }
    
    </style>
@@ -27,7 +31,15 @@
     {% block header %}{% endblock %}
 
     {% block content %} 
+
+        {% for message in app.flashes('error') %}
+         <div class="isa_error">
+         
+          <h2 class="titleError"> <i class="fa fa-times-circle"></i> {{message}}</h2>
+        </div>  
+       {% endfor %}
       {{form_start(formRegistro, {'attr': { 'class':'form-signin'}})}}
+
       <img  style="width: 75%; margin: auto" class="mb-4" src={{asset("assets/img/logo.svg")}} alt="logo">
       <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
       

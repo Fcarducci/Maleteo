@@ -75,21 +75,49 @@
             {{form_widget(demoForm.ciudad)}}
           </div>
           <div>
-            {{form_widget(demoForm.politica)}} 
+            {{form_widget(demoForm.politica, {'attr':{'required': 'required'}})}} 
             {{form_label(demoForm.politica)}} 
             <a style="text-decoration: underline; color: #f9a519;" href="#">politica de privacidad</a>
           </div>
 
-
-          
           <div class="campo-formulario">
-            <button id="boton" class="submit">Enviar</button>
-          </div>
-          {# </div> #}
+            <button type="submit" id="boton" class="submit">Enviar</button>
+          </div>    
+         
          
         {{form_end(demoForm)}}
     </div>
     </section>
+           {# <form class="form" id="formulario" action="/demo/submit">
+          <div class="campo-formulario">
+            <p class="titulo-form"><strong>Solicita una demo</strong></p>
+          </div>
+          <div class="campo-formulario">
+           <label>Nombre</label>
+           <input id="nombre" name="nombre" type="text" placeholder="Francesco Carducci" required>
+          </div>
+          <div class="campo-formulario">
+           <label>Email</label>
+           <input id="email" name="email" type="email" placeholder="Francesco@upgrade.com" required>
+          </div>
+          <div class="campo-formulario">
+           <label>Ciudad</label>
+           <select id="ciudad" name="ciudad" placeholder="Elige Ciudad">
+           <option>Madrid</option>
+           <option>Sevilla</option>
+           <option>Barcelona</option>
+           </select>
+          </div>
+
+          <div class="campo-formulario">
+           <p class="check"><input type="checkbox"> Acepto la <a class="enlace" href="#"> política de privacidad</a></p>
+          </div>
+
+          <div class="campo-formulario">
+            <button id="boton" class="submit">Enviar</button>
+          </div>
+        
+        </form> #}
 
       <section class="opiniones-guardianes">
         <div class="opiniones-titulo">
@@ -110,5 +138,12 @@
       </section>
 
  {% endblock %}
+
+     {% block javascripts %}
+     
+     {{parent()}}
+    <script src={{asset("/js/miscript.js")}}></script>
+    
+    {% endblock %}
 
 
