@@ -292,7 +292,16 @@ footer {
     align-items: center;
     justify-content: flex-start;
   }
-
+  .cabecera {
+    /* background-color: #ececec !important; */
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .botonMenu {
+    margin-left: 50% !important;
+  }
   .logo-header {
     width: 55%;
     height: auto;
