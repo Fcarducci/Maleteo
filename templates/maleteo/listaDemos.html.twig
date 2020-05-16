@@ -41,13 +41,13 @@
      {% for usuario in usuarios %}
 
 
-       <tbody>
+       <tbody class="bodyTable">
          <tr>
-          <th scope="row">{{usuario.id}}</th>
-          <td>{{usuario.nombre}}</td>
-          <td>{{usuario.email}}</td>
-          <td>{{usuario.ciudad}} </td>
-          <td><td><a href="{{path("delete", {id:usuario.id})}}" style="color:white;"><i class="fas fa-trash-alt fa-1x"></i></a></td></td>
+          <th class="id" scope="row">{{usuario.id}}</th>
+          <td class="nombre">{{usuario.nombre}}</td>
+          <td class="email">{{usuario.email}}</td>
+          <td class="ciudad">{{usuario.ciudad}} </td>
+          <td class="enlace"><a href="{{path("delete", {id:usuario.id})}}" style="color:white;"><i class="fas fa-trash-alt fa-1x"></i></a></td>
           {# <td><a style="color: white;" href={{path("delete", {id:usuario.id})}}><img  width="15" src={{asset("assets/img/delete.png")}} alt="delete"></a></td> #}
          </tr>
   
@@ -63,6 +63,45 @@
      
 
 {% endblock %}
+
+{% block javascripts %}
+     
+{{parent()}}
+    <script>
+let bodyTable=document.getElementsByClassName("bodyTable");
+let a = document.getElementsByClassName("enlace");
+console.log(a);
+let id = document.getElementsByClassName("id");
+console.log(id);
+let nombreDemo = document.getElementsByClassName("nombre");
+console.log(nombre);
+let email = document.getElementsByClassName("email");
+console.log(email);
+let ciudad = document.getElementsByClassName("ciudad");
+console.log(ciudad);
+
+for (let i = 0; i < a.length; i++) {
+  a[i].addEventListener("click", borrar);
+  function borrar(e) {
+    let datos = {
+      id: id[i].innerText,
+      nombre: nombreDemo[i].innerText,
+      email: email[i].innerText,
+      ciudad: ciudad[i].innerText,
+    };
+    console.log(datos);
+    bodyTable[i].remove();
+   
+   
+    fetch("/solicitudes/lista/"+datos.id+"/borrar", {
+    method: "POST",
+    body: JSON.stringify(datos)});
+    event.preventDefault();
+  }
+}
+    </script>
+    
+    {% endblock %}
 
 
 

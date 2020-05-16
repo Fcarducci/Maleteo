@@ -36,11 +36,29 @@ function afterDemo() {
   // }
 }
 
-//? FORMULARIO DE REGISTRO
+// let a = document.getElementsByClassName("enlace");
+// console.log(a);
+// let id = document.getElementsByClassName("id");
+// console.log(id);
+// let comentario = document.getElementsByClassName("comentario");
+// console.log(comentario);
+// let autor = document.getElementsByClassName("autor");
+// console.log(autor);
+// let ciudad = document.getElementsByClassName("ciudad");
+// console.log(ciudad);
 
-// let inputEmailRegistro = document.querySelector(".form-signin");
-// let divError = document.querySelector(".isa_error");
-// inputEmailRegistro.addEventListener("submit", mostrarError);
-// function mostrarError() {
-//   divError.setAttribute("style", "display:block");
+// for (let i = 0; i < a.length; i++) {
+//   a[i].addEventListener("click", borrar);
+//   function borrar(e) {
+//     let datos = {
+//       id: id[i].innerText,
+//       comentario: comentario[i].innerText,
+//       autor: autor[i].innerText,
+//       ciudad: ciudad[i].innerText,
+//     };
+//     console.log(datos);
+//     // let url = e.currentTarget.href;
+//     fetch(url).then((response) => console.log(response));
+//     event.preventDefault();
+//   }
 // }

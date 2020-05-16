@@ -32,7 +32,8 @@
         <label  for="remember_me">Recordarme</label>
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
       <button class="boton-login btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-      <p style="text-align: center;" class="mt-5 mb-3 text-muted">&copy; 2020</p>
+      <p style="text-align: center; margin-top: .5rem;">Registrate <a style="text-decoration: underline; color: #f9a519;" href="{{path('registro')}}">aquí</a></p>
+      <p style="text-align: center; margin-top: 1rem!important;" class="mt-5 mb-3 text-muted">&copy; 2020</p>
       {{form_end(loginForm)}}
     
     {% endblock %}

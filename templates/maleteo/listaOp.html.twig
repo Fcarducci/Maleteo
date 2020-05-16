@@ -41,13 +41,13 @@
      {% for opinion in opiniones %}
 
 
-       <tbody>
+       <tbody class="bodyTable">
          <tr>
-          <th scope="row">{{opinion.id}}</th>
-          <td>{{opinion.comentario}}</td>
-          <td>{{opinion.autor}}</td>
-          <td>{{opinion.ciudad}}</td>
-          <td><td><a href='{{path("deleteOp", {id:opinion.id})}}' style="color:white;"><i class="fas fa-trash-alt fa-1x"></i></a></td></td>
+          <th class="id" scope="row">{{opinion.id}}</th>
+          <td class="comentario">{{opinion.comentario}}</td>
+          <td class="autor">{{opinion.autor}}</td>
+          <td class="ciudad">{{opinion.ciudad}}</td>
+          <td><a class="enlace" href='{{path("deleteOp", {id:opinion.id})}}' style="color:white;"><i class="fas fa-trash-alt fa-1x"></i></a></td>
          </tr>
   
       </tbody>
@@ -62,6 +62,49 @@
      
 
 {% endblock %}
+
+ 
+{% block javascripts %}
+     
+{{parent()}}
+    <script>
+let bodyTable=document.getElementsByClassName("bodyTable");
+let a = document.getElementsByClassName("enlace");
+console.log(a);
+let id = document.getElementsByClassName("id");
+console.log(id);
+let comentario = document.getElementsByClassName("comentario");
+console.log(comentario);
+let autor = document.getElementsByClassName("autor");
+console.log(autor);
+let ciudad = document.getElementsByClassName("ciudad");
+console.log(ciudad);
+
+for (let i = 0; i < a.length; i++) {
+  a[i].addEventListener("click", borrar);
+  function borrar(e) {
+    let datos = {
+      id: id[i].innerText,
+      comentario: comentario[i].innerText,
+      autor: autor[i].innerText,
+      ciudad: ciudad[i].innerText,
+    };
+    console.log(datos);
+    bodyTable[i].remove();
+   
+   
+    fetch("/opiniones/lista/"+datos.id+"/borrar", {
+    method: "POST",
+    body: JSON.stringify(datos)});
+    event.preventDefault();
+  }
+}
+    </script>
+    
+    {% endblock %}
+
+
+
 
 
 

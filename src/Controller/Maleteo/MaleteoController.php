@@ -90,12 +90,13 @@ public function demo(EntityManagerInterface $em, Request $request)
   } 
 
   /**
- * @Route("/solicitudes/{id}/borrar", name="delete")
+ * @Route("/solicitudes/lista/{id}/borrar", name="delete")
  */
  public function borrarSolicitud(Usuario $solicitud, EntityManagerInterface $em)
  {
  $em->remove($solicitud);
  $em->flush();
+ die;
  return new RedirectResponse('/solicitudes');
  }
 
@@ -138,20 +139,21 @@ public function demo(EntityManagerInterface $em, Request $request)
  */
  public function borrarOpiniones(Opiniones $solicitud, EntityManagerInterface $em)
  {
- $em->remove($solicitud);
- $em->flush();
+  
+  $em->remove($solicitud);
+  $em->flush();
  return new RedirectResponse('/opiniones/lista');
  }
 
 
-  /**
-   * @Route("registro/error", name="error")
-   */
+  // /**
+  //  * @Route("registro/error", name="error")
+  //  */
 
-   public function errorRegistro()
-   {
-    return $this->render("maleteo/maleteoError.html.twig");
-   }
+  //  public function errorRegistro()
+  //  {
+  //   return $this->render("maleteo/maleteoError.html.twig");
+  //  }
 
     /**
    * @Route("/registro", name="registro")
